@@ -17,11 +17,36 @@
             <h1>Genera una <br><span>Contraseña aleatoria</span> </h1>
             <div class="display">
                 <input type="text" id="password" placeholder="Password">
-                <img src="images/copy.png" alt="copiar">
+                <img src="images/copy.png" alt="copiar" onclick=copyPassword()>
             </div>
-            <button><img src="images/generate.png" alt="Generar contraseña">Generar contraseña</button>
+            <button onclick=createPassword()><img src="images/generate.png" alt="Generar contraseña">Generar contraseña</button>
         </div>
         
-        <script src="" async defer></script>
+        <script>
+            const passwordBox = document.getElementById("password");
+            const lenght = 12;
+
+            const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            const lowerCase = "abcdefghijklmnopqrstuvwxyz"
+            const simbolos = "!#$%&/()=?¡*|><"
+            const allChars = upperCase + lowerCase + simbolos;
+            function createPassword(){
+                let password="";
+                password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+                password += simbolos[Math.floor(Math.random() * simbolos.length)];
+
+                while(lenght > password.length){
+                    password += allChars[Math.floor(Math.random() * allChars.length)];
+                }
+                passwordBox.value = password;
+            }
+
+            function copyPassword(){
+                passwordBox.select();
+                document.execCommand("copy");
+            }
+
+        </script>
     </body>
 </html>
