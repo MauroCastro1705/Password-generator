@@ -2,7 +2,6 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,42 +10,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <h1>Genera una <br><span>Contraseña aleatoria</span> </h1>
+            <h1>Generá una <br><span data-value="CONTRASEÑA ALEATORIA">Contraseña aleatoria</span></h1>
             <div class="display">
                 <input type="text" id="password" placeholder="Password">
                 <img src="images/copy.png" alt="copiar" onclick=copyPassword()>
             </div>
-            <button onclick=createPassword()><img src="images/generate.png" alt="Generar contraseña">Generar contraseña</button>
+            
+            <div>
+                <input type="text" id="cantidad" placeholder="12"><label for="input">Cantidad de digitos</label>
+                <button onclick=createPassword()><img src="images/generate.png" alt="Generar contraseña">Generar contraseña</button>
+            </div>
         </div>
-        
-        <script>
-            const passwordBox = document.getElementById("password");
-            const lenght = 12;
-
-            const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            const lowerCase = "abcdefghijklmnopqrstuvwxyz"
-            const simbolos = "!#$%&/()=?¡*|><"
-            const allChars = upperCase + lowerCase + simbolos;
-            function createPassword(){
-                let password="";
-                password += upperCase[Math.floor(Math.random() * upperCase.length)];
-                password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
-                password += simbolos[Math.floor(Math.random() * simbolos.length)];
-
-                while(lenght > password.length){
-                    password += allChars[Math.floor(Math.random() * allChars.length)];
-                }
-                passwordBox.value = password;
-            }
-
-            function copyPassword(){
-                passwordBox.select();
-                document.execCommand("copy");
-            }
-
+        <script src="app.js"> 
         </script>
     </body>
 </html>

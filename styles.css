@@ -2,12 +2,14 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Space Mono", monospace;
 }
 
 body{
     background: #002339;
     color: #fff;
+    height: 100%;
+    overflow: hidden;
 
 }
 .container{
@@ -30,7 +32,7 @@ body{
 }
 
 .container h1{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 45px;
 }
 .container h1 span{
@@ -53,6 +55,7 @@ body{
     border: 0;
     outline: 0;
     font-size: 25px;
+    width: 94%;
 }
 .container button img{
     width: 28px;
@@ -79,4 +82,16 @@ body{
 
     transform: scale(1.05);
     background: #028045;
+}
+
+#cantidad{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 22px;
+    padding: 16px 26px;
+    border-radius: 5px;
 }
