@@ -19,14 +19,18 @@
             <h1>Generá una <br><span data-value="CONTRASEÑA ALEATORIA">Contraseña aleatoria</span></h1>
             <div class="display">
                 <input type="text" id="password" placeholder="Password">
+                
                 <img src="images/copy.png" alt="copiar" onclick=copyPassword()>
+                
             </div>
-            
-            <div>
+            <label class="aviso">Contraseña copiada</label>
+            <div class="digitos">
                 <input type="text" id="cantidad" placeholder="12"><label for="input">Cantidad de digitos</label>
                 <button onclick=createPassword()><img src="images/generate.png" alt="Generar contraseña">Generar contraseña</button>
+                <h4>Castro Mauro 2025</h4>
             </div>
         </div>
+        
         <script src="app.js"> 
         </script>
     </body>

@@ -17,12 +17,14 @@ function createPassword(){
                     password += allChars[Math.floor(Math.random() * allChars.length)];
                 }
                 passwordBox.value = password;
+                document.querySelector(".aviso").style.display = "none";
                 
 }
 
 function copyPassword(){
     passwordBox.select();
     document.execCommand("copy");
+    document.querySelector(".aviso").style.display = "block";
  }
 
 document.querySelector("span").onmouseover = event =>{
